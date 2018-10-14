@@ -1,7 +1,5 @@
 package com.example.udaan.Test.controller;
 
-import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -104,22 +102,28 @@ public class TicketsController {
 
 	// API to get information of available tickets at a given position
 
-	@GetMapping(path = "/screens/{screenName}/seats")
-
-	private ResponseEntity<HashMap<String, SeatsDTO>> getAvailableSeatsAtGivenPosition(
-			@PathVariable("screenName") String screenName, @RequestParam("numSeats") Long numSeats,
-			@RequestParam("choice") String choice) {
-
-		try {
-
-			return new ResponseEntity<HashMap<String, SeatsDTO>>(
-					serviceInterface.getAvailableSeatsAtGivenPosition(screenName, numSeats, choice), HttpStatus.OK);
-
-		} catch (Exception e) {
-			return new ResponseEntity<HashMap<String, SeatsDTO>>(new HashMap<String, SeatsDTO>(),
-					HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-
-	}
+	/*
+	 * @GetMapping(path = "/screens/{screenName}/seats")
+	 * 
+	 * private ResponseEntity<HashMap<String, SeatsDTO>>
+	 * getAvailableSeatsAtGivenPosition(
+	 * 
+	 * @PathVariable("screenName") String screenName, @RequestParam("numSeats") Long
+	 * numSeats,
+	 * 
+	 * @RequestParam("choice") String choice) {
+	 * 
+	 * try {
+	 * 
+	 * return new ResponseEntity<HashMap<String, SeatsDTO>>(
+	 * serviceInterface.getAvailableSeatsAtGivenPosition(screenName, numSeats,
+	 * choice), HttpStatus.OK);
+	 * 
+	 * } catch (Exception e) { return new ResponseEntity<HashMap<String,
+	 * SeatsDTO>>(new HashMap<String, SeatsDTO>(),
+	 * HttpStatus.INTERNAL_SERVER_ERROR); }
+	 * 
+	 * }
+	 */
 
 }
