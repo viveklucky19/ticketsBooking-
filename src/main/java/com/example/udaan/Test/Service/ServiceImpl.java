@@ -189,6 +189,7 @@ public class ServiceImpl implements ServiceInterface {
 
 		for (long i = 0; i < availableSeats.size(); i++) {
 
+			// logic to
 		}
 
 		return answer;
